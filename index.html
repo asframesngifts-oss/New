@@ -396,8 +396,12 @@ function calcBal(p) {
 function openModal(id) {
   document.getElementById(id+'Modal').classList.add('open');
   if (id === 'add') {
-    if(WEBHOOK_URL) syncFromSheet();
-    setTimeout(() => document.getElementById('f_name').focus(), 100);
+    if(WEBHOOK_URL && orders.length === 0) {
+      syncFromSheet();
+      setTimeout(() => document.getElementById('f_name').focus(), 100);
+    } else {
+      setTimeout(() => document.getElementById('f_name').focus(), 100);
+    }
   }
 }
 function custSearch(val) {
