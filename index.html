@@ -148,7 +148,7 @@ if(sessionStorage.getItem('asf_auth')==='1'){
     <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#EF9F27"/><path d="M8 4v4M8 11v1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
     <div><b>Setup required:</b> Paste your Google Apps Script Web App URL below to connect Google Sheets.<br>
     <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
-      <input type="text" id="webhookInput" placeholder="https://script.google.com/macros/s/YOUR_ID/exec" style="flex:1;min-width:200px;padding:5px 9px;border:0.5px solid #FAC775;border-radius:6px;background:#fff;color:#1a1a18;font-size:12px">
+      <input type="text" id="webhookInput" placeholder="https://.com/macros/s/YOUR_ID/exec" style="flex:1;min-width:200px;padding:5px 9px;border:0.5px solid #FAC775;border-radius:6px;background:#fff;color:#1a1a18;font-size:12px">
       <button class="btn primary" style="padding:5px 12px;font-size:12px" onclick="saveWebhook()">Connect</button>
       <button class="btn" style="padding:5px 12px;font-size:12px" onclick="dismissBanner()">Dismiss</button>
     </div></div>
@@ -287,7 +287,7 @@ if(sessionStorage.getItem('asf_auth')==='1'){
 
 <script>
 // ─── CONFIG ───────────────────────────────────────────────
-var WEBHOOK_URL = ' ';
+var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw3AhVnaOjtx7MmHzltl9tV_SLxJ2TYzekIhyEP90ObJKvZ46OWuWK7Ci6SB2flyu5-/exec ';
 
 // ──────────────────────────────────────────────────────────
 
