@@ -409,7 +409,10 @@ function custSearch(val) {
   const sug = document.getElementById('custSug');
   const q = val.trim().toLowerCase();
   if (!q) { sug.style.display = 'none'; return; }
-  if (!orders.length) { sug.style.display = 'none'; return; }
+  if (!orders.length) {
+    syncFromSheet().then(() => custSearch(val));
+    return;
+  }
   const seen = {};
   orders.forEach(o => {
     if (!o.phone) return;
