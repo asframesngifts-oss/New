@@ -396,8 +396,13 @@ function calcBal(p) {
 function openModal(id) {
   document.getElementById(id+'Modal').classList.add('open');
   if (id === 'add') {
-    if(WEBHOOK_URL) syncFromSheet();
-    setTimeout(() => document.getElementById('f_name').focus(), 1500);
+    if(WEBHOOK_URL){
+      syncFromSheet().then(() => {
+        document.getElementById('f_name').focus();
+      });
+    } else {
+      setTimeout(() => document.getElementById('f_name').focus(), 100);
+    }
   }
 }
 function custSearch(val) {
