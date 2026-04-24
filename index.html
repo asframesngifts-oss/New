@@ -395,9 +395,13 @@ function calcBal(p) {
 // ─── MODALS ───────────────────────────────────────────────
 function openModal(id) {
   document.getElementById(id+'Modal').classList.add('open');
+
   if (id === 'add') {
-    if(WEBHOOK_URL){
+    if (WEBHOOK_URL) {
+      document.getElementById('f_name').disabled = true; // prevent typing early
+
       syncFromSheet().then(() => {
+        document.getElementById('f_name').disabled = false;
         document.getElementById('f_name').focus();
       });
     } else {
